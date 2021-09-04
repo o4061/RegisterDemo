@@ -10,7 +10,6 @@ import com.userfaltakas.registerdemo.databinding.StartPageBinding
 import com.userfaltakas.registerdemo.repository.RegisterRepository
 
 class StartPage : AppCompatActivity() {
-
     private lateinit var binding: StartPageBinding
     lateinit var viewModel: StartPageViewModel
 
@@ -26,8 +25,8 @@ class StartPage : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        val firebaseRepository = RegisterRepository()
-        val viewModelFactory = StartPageViewModelProvider(firebaseRepository)
+        val registerRepository = RegisterRepository()
+        val viewModelFactory = StartPageViewModelProvider(registerRepository)
         viewModel =
             ViewModelProvider(this, viewModelFactory).get(StartPageViewModel::class.java)
     }

@@ -1,4 +1,4 @@
-package com.userfaltakas.registerdemo.fragments
+package com.userfaltakas.registerdemo.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

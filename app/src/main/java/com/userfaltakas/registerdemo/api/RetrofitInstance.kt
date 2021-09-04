@@ -1,6 +1,6 @@
 package com.userfaltakas.registerdemo.api
 
-import com.userfaltakas.registerdemo.constants.Constants.BASE_URL
+import com.userfaltakas.registerdemo.constant.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

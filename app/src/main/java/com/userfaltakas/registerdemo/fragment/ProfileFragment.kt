@@ -1,4 +1,4 @@
-package com.userfaltakas.registerdemo.fragments
+package com.userfaltakas.registerdemo.fragment
 
 import android.app.Dialog
 import android.os.Bundle
