@@ -37,13 +37,14 @@ class HomeFragment : Fragment() {
         viewModel.user.observe(viewLifecycleOwner, { response ->
             when (response) {
                 is Resource.Success -> {
+                    val data = response.data?.data
                     binding.apply {
                         profileCard.visibility = View.VISIBLE
                         welcomeTextView.visibility = View.INVISIBLE
-                        firstNameTextView.text = response.data?.data?.first_name
-                        lastNameTextView.text = response.data?.data?.last_name
-                        emailNameTextView.text = response.data?.data?.email
-                        Glide.with(this@HomeFragment).load(response.data?.data?.avatar)
+                        firstNameTextView.text = data?.first_name
+                        lastNameTextView.text = data?.last_name
+                        emailNameTextView.text = data?.email
+                        Glide.with(this@HomeFragment).load(data?.avatar)
                             .into(binding.avatarImage)
                     }
                 }
