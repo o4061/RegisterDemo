@@ -13,7 +13,7 @@
         android:fontFamily="@font/circular_black"
         android:gravity="center"
         android:text="@string/welcome_message"
-        android:textSize="20sp"
+        android:textSize="@dimen/title_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,10 +23,10 @@
         android:id="@+id/profileCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="@dimen/horizontal_margin"
+        android:layout_marginTop="@dimen/horizontal_margin"
         android:visibility="gone"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="@dimen/radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -34,7 +34,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
             <ImageView
                 android:id="@+id/avatarImage"
@@ -49,10 +48,10 @@
                 android:id="@+id/firstNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/vertical_margin"
                 android:fontFamily="@font/circular_black"
                 android:text="@string/first_name"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_size"
                 app:layout_constraintBottom_toTopOf="@+id/lastNameTextView"
                 app:layout_constraintStart_toEndOf="@+id/avatarImage"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -61,10 +60,10 @@
                 android:id="@+id/lastNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/vertical_margin"
                 android:fontFamily="@font/circular_black"
                 android:text="@string/last_name"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_size"
                 app:layout_constraintBottom_toTopOf="@+id/emailNameTextView"
                 app:layout_constraintStart_toEndOf="@+id/avatarImage"
                 app:layout_constraintTop_toBottomOf="@+id/firstNameTextView" />
@@ -73,10 +72,10 @@
                 android:id="@+id/emailNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/vertical_margin"
                 android:fontFamily="@font/circular_black"
                 android:text="@string/email"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/avatarImage"
                 app:layout_constraintTop_toBottomOf="@+id/lastNameTextView" />

@@ -7,16 +7,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.userfaltakas.registerdemo.activity.StartPage
-import com.userfaltakas.registerdemo.activity.StartPageViewModel
+import com.userfaltakas.registerdemo.activity.StartActivity
+import com.userfaltakas.registerdemo.activity.StartActivityViewModel
 import com.userfaltakas.registerdemo.api.Resource
 import com.userfaltakas.registerdemo.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var viewModel: StartPageViewModel
+    private lateinit var viewModel: StartActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,8 +27,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = (activity as StartPage).viewModel
-
+        viewModel = (activity as StartActivity).viewModel
         setContext()
     }
 
@@ -48,7 +46,6 @@ class HomeFragment : Fragment() {
                             .into(binding.avatarImage)
                     }
                 }
-
                 is Resource.Error -> {
                     Toast.makeText(context, response.message.toString(), Toast.LENGTH_SHORT).show()
                 }

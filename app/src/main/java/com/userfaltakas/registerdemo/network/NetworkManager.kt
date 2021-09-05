@@ -1,19 +1,17 @@
-package com.userfaltakas.registerdemo.networkAdapter
+package com.userfaltakas.registerdemo.network
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
 
-class NetworkAdapter : ConnectivityManager.NetworkCallback() {
-
+class NetworkManager : ConnectivityManager.NetworkCallback() {
     private var isNetworkAvailable: Boolean = false
 
     fun checkNetworkAvailability(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         connectivityManager.registerDefaultNetworkCallback(this)
-
         var isConnected = false
 
         connectivityManager.allNetworks.forEach { network ->

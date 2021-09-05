@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RegisterDemo">
         <activity
-            android:name=".activity.StartPage"
+            android:name=".activity.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

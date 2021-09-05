@@ -14,14 +14,9 @@ import kotlinx.coroutines.launch
 import okhttp3.ResponseBody
 import retrofit2.Response
 
-class StartPageViewModel(private val repository: RegisterRepository) : ViewModel() {
-
-    var user: MutableLiveData<Resource<User>>
-    lateinit var credential: MutableLiveData<Resource<Credential>>
-
-    init {
-        user = MutableLiveData()
-    }
+class StartActivityViewModel(private val repository: RegisterRepository) : ViewModel() {
+    var user = MutableLiveData<Resource<User>>()
+    var credential = MutableLiveData<Resource<Credential>>()
 
     fun getRegisterUser(user_id: String) = viewModelScope.launch {
         user = MutableLiveData()
@@ -50,17 +45,13 @@ class StartPageViewModel(private val repository: RegisterRepository) : ViewModel
                 return Resource.Success(it)
             }
         }
-
-        return Resource.Error(getErrorMsg(response.errorBody()!!))
+        return Resource.Error(getErrorMsg(response.errorBody()))
     }
 
-    private fun getErrorMsg(response: ResponseBody): String {
+    private fun getErrorMsg(response: ResponseBody?): String? {
         val gson = Gson()
         val apiError: ApiError? =
-            gson.fromJson(response.charStream(), ApiError::class.java)
-        if (apiError != null) {
-            return apiError.error
-        }
-        return ""
+            gson.fromJson(response?.charStream(), ApiError::class.java)
+        return apiError?.error
     }
 }
